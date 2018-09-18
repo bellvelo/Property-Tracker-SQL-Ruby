@@ -33,8 +33,8 @@ def HouseSearch.all() # READ #
   db.prepare("all", sql)
   search = db.exec_prepared("all") # returns an array of hashes
   db.close()
-  
-  return search.map {|order_hash| HouseSearch.new(order_hash)} # coverts the array of hashes into an array of objects
+
+  return search.map {|hash| HouseSearch.new(hash)} # coverts the array of hashes into an array of objects
 end
 
 def update # UPDATE #
